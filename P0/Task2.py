@@ -20,13 +20,22 @@ Print a message:
 September 2016.".
 """
 longestTime = 0
-index = 0
-longestTimeIndex = 0
+longestTimeNumber = 0
+numbers = dict()
 
 for call in calls:
-    if int(call[3]) > longestTime:
-        longestTime = int(call[3])
-        longestTimeIndex = index
-    index += 1
+    if call[0] not in numbers:
+        numbers[call[0]] = 0
 
-print('%s spent the longest time, %s seconds, on the phone during September 2016.' %(str(calls[longestTimeIndex][0]), str(calls[longestTimeIndex][3])))
+    if call[1] not in numbers:
+        numbers[call[1]] = 0
+
+    numbers[call[0]] += int(call[3])    
+    numbers[call[1]] += int(call[3])
+        
+for num in numbers:
+    if numbers[num] > longestTime:
+        longestTime = numbers[num]
+        longestTimeNumber = num
+
+print('%s spent the longest time, %s seconds, on the phone during September 2016.' %(longestTimeNumber, str(longestTime)))
