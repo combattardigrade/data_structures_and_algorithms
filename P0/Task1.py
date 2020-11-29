@@ -18,4 +18,15 @@ How many different telephone numbers are there in the records?
 Print a message:
 "There are <count> different telephone numbers in the records."
 """
-print('There are %i different telephone numbers in the records'%(len(texts) + len(calls)))
+
+telephones = set()
+
+for call in calls:
+    telephones.add(call[0])
+    telephones.add(call[1])
+
+for text in texts:
+    telephones.add(text[0])
+    telephones.add(text[1])
+
+print('There are %i different telephone numbers in the records'%(len(telephones)))
