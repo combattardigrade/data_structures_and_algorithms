@@ -1,45 +1,45 @@
 Worst-Case Big-O Notation
 
 Task0:
-> Worse case complexity: O(2)
+> Worse case complexity: O(n)
 > Algorithm:
     > Print resulting string to console (complexity: O(1))
     > Print resulting string to console (complexity: O(1))
 
 Task1:
-> Worse case complexity: O(4n^2 + 2)
+> Worse case complexity: O(n) + O(n)
 > Algorithm:
     > Initialize an empty set (complexity: O(1))
-    > Map through calls and add call[0] and call[1] to the set (complexity: O(2n))
-    > Map through texts and add text[0] and text[1] to the set (complexity: O(2n))
+    > Map through calls and add call[0] and call[1] to the set (complexity: O(n))
+    > Map through texts and add text[0] and text[1] to the set (complexity: O(n))
     > Print resulting string to console (complexity: O(1))
 
 Task2:
-> Worse case complexity: O(18n^2 + 4)
+> Worse case complexity: O(n) + O(n)
 > Algorithm:
-    > Declare 2 variables and an empty dictionary (complexity: O(3))
+    > Declare 2 variables and an empty dictionary (complexity: O(1))
     > Loop through calls to sum the duration of calls for every unique number 
-      and add them to the dictionary (complexity: O(6n))
-    > Loop through unique numbers to find the longest time (complexity: O(3n))
+      and add them to the dictionary (complexity: O(n))
+    > Loop through unique numbers to find the longest time (complexity: O(n))
     > Print resulting string to console (complexity: O(1))
 
 Task3:
-> Worse case complexity: O(24n^2 + 6)
+> Worse case complexity: O(n) + O(n) + O(n)
 > Algorithm:
-    > Declare 2 empty dictionaries and a variable (complexity: O(3))
-    > Loop through calls (complexity: O(24n)):
-        > Get area code in number (from) (complexity: O(7))
-        > Get area code in number (to) (complexity: O(7))
-        > Check if from and to are from area code '(080)' and add to counter (complexity: O(2))
-        > Save `from` area codes in dictionary (complexity: O(4))
-        > Save `to` area codes in dictionary (complexity: O(4))
-    > Print numbers called (complexity: O(n + 1))
-    > Print percent of calls from fixed lines (complexity: O(2))
+    > Declare 2 empty dictionaries and a variable (complexity: O(1))
+    > Loop through calls (complexity: O(n)):
+        > Get area code in number (from) (complexity: O(1))
+        > Get area code in number (to) (complexity: O(1))
+        > Check if from and to are from area code '(080)' and add to counter (complexity: O(1))
+        > Save `from` area codes in dictionary (complexity: O(1))
+        > Save `to` area codes in dictionary (complexity: O(1))
+    > Print numbers called (complexity: O(n) + O(n))
+    > Print percent of calls from fixed lines (complexity: O(1))
 
 Task4:
-> Worse case complexity: O(128n^3 + 2)
+> Worse case complexity: O(n) + O(n) + O(n) + O(n)
 > Algorithm:
     > Declare empty dictionary (complexity: O(1))
-    > Loop through all calls to count the number of in/out calls per number (complexity: O(8n))
-    > Loop through all texts to count the number of in/out texts per number (complexity: O(8n))
-    > Loop through and print possible telemarketers (complexity: O(2n + 1))
+    > Loop through all calls to count the number of in/out calls per number (complexity: O(n))
+    > Loop through all texts to count the number of in/out texts per number (complexity: O(n))
+    > Loop through and print possible telemarketers (complexity: O(n) + O(n))
