@@ -46,7 +46,7 @@ The percentage should have 2 decimal digits
 
 def get_code(n):
   if n[0] == '(':
-    code = n[n.find("(")+1:n.find(")")]
+    code = '(' + n[n.find("(")+1:n.find(")")] + ')' 
   
   elif n[0] == '7' or n[0] == '8' or n[0] == '9':
     code = n[0] + n[1] + n[2] + n[3]
@@ -63,7 +63,7 @@ def print_partA(codes):
     print(code)
 
 def print_partB(codes_from, total_bangalore):
-  r = total_bangalore / codes_from['080']
+  r = total_bangalore / codes_from
   print('%s percent of calls from fixed lines in Bangalore are calls to other fixed lines in Bangalore.'%(str(round(r * 100,2) )))
 
 def main():
@@ -75,7 +75,7 @@ def main():
     code_from = get_code(call[0])
     code_to = get_code(call[1])
 
-    if code_from == code_to:
+    if code_from == '(080)' and code_to == '(080)':
       total_bangalore += 1
 
     if code_to in codes_to:
@@ -87,9 +87,9 @@ def main():
       codes_from[code_from] += 1
     else:
       codes_from[code_from] = 1
-    
+  
   print_partA(codes_to)
-  print_partB(codes_from, total_bangalore)
+  print_partB(codes_from['(080)'], total_bangalore)
 
 
 main()
